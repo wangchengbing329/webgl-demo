@@ -2,19 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" href="./logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="./manifest.json" />
+    <script src="http://www.yanhuangxueyuan.com/threejs/build/three.min.js"></script>
+    <script src="http://www.yanhuangxueyuan.com/threejs/examples/js/controls/OrbitControls.js"></script>
+    <script src="http://www.yanhuangxueyuan.com/threejs/examples/js/loaders/STLLoader.js"></script>
+    <script src="http://www.yanhuangxueyuan.com/threejs/examples/js/loaders/OBJLoader.js"></script>
+    <script src="http://www.yanhuangxueyuan.com/threejs/examples/js/loaders/MTLLoader.js"></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -40,4 +45,35 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <!-- <script>
+    const scene = new THREE.scene();
+    const geometry = new THREE.BoxGeometry(100,100,100)
+    import * as THREE from 'three';
+    function init() {
+      // create a scene, that will hold all our elements such as objects, cameras and lights.
+      let scene = new THREE.Scene();
+      // create a camera, which defines where we're looking at
+      let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
+      // tell the camera where to look
+      camera.position.set(0, 0, 10);
+      // create a render and set the size
+      const sizes = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      }
+      let renderer = new THREE.WebGLRenderer();
+      renderer.setSize(sizes.width, sizes.height);
+      // add the output of the render function to the HTML
+      document.body.appendChild(renderer.domElement);
+    
+      // var clock = new THREE.Clock();
+      // function for re-rendering/animating the scene
+      function tick() {
+        requestAnimationFrame(tick);
+        renderer.render(scene, camera);
+      }
+      tick();
+    }
+    init();
+  </script> -->
 </html>
